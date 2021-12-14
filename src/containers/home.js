@@ -1,27 +1,39 @@
 import React, { Component } from "react";
 
-import { Container, Video, Content } from "./style";
+import {
+  Container,
+  Video,
+  Content,
+  IconsContainer,
+  IconLinkWrapper,
+  Greeting,
+  InformationContainer,
+  Subtitle,
+  Name,
+} from "./style";
 import video from "../assets/video3.mp4";
 
 class Home extends Component {
-    constructor() {
-        super();
-        this.state = {
-          name: "Kelly",
-          time: "",
-        };
-        this.changeToYulong = this.changeToYulong.bind(this);
-        this.changeToKelly = this.changeToKelly.bind(this);
-      }
-    
-      changeToYulong() {
-        this.setState({ name: "Yulong" });
-      }
-    
-      changeToKelly() {
-        this.setState({ name: "Kelly" });
-      }
-    
+  constructor() {
+    super();
+    this.state = {
+      name: "Kelly",
+      time: "",
+    };
+    this.changeToYulong = this.changeToYulong.bind(this);
+    this.changeToKelly = this.changeToKelly.bind(this);
+  }
+
+  changeToYulong() {
+    this.setState({ name: "Yulong" });
+  }
+
+  changeToKelly() {
+    // setTimeout(() => {
+      this.setState({ name: "Kelly" })
+    // }, 1000);
+  }
+
   render() {
     const date = new Date();
     const hours = date.getHours();
@@ -33,43 +45,44 @@ class Home extends Component {
     } else {
       timeofDay = "night";
     }
+    let numChars = 22 + timeofDay.length + this.state.name.length;
     return (
       <div id="home">
         <Container>
           <Video autoPlay loop muted src={video} type="video/mp4" />
           <Content>
-            <h1 className="greeting">
+            <Greeting className="greeting" numChars={numChars}>
               <span>Good {timeofDay}</span>, I am
-              <span
-                onMouseEnter={this.changeToYulong}
-                onMouseLeave={this.changeToKelly}
+              <Name
               >
-                {" "}
-                {this.state.name}{" "}
-              </span>
+                <span>Kelly</span>
+                <span>Yulong</span>
+              </Name>
               Wu
-            </h1>
-            <h5>BE CHILL BE POSITIVE</h5>
-            <hr />
-            <p>HTML/CSS | React | JavaScript | Java | Unity</p>
-                <div className="social-links">
-                  {/* linkedin */}
-                  <a
-                    href="https://www.linkedin.com/in/yulongkelly-wu/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <i className="fa fa-linkedin-square" aria-hidden="true" />
-                  </a>
-                  {/* github */}
-                  <a
-                    href="https://github.com/yulongkelly"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    <i className="fa fa-github-square" aria-hidden="true" />
-                  </a>
-                </div>
+            </Greeting>
+            <InformationContainer>
+              <Subtitle>FULLSTACK WEB DEVELOPER</Subtitle>
+              <hr />
+              <p> React | Django | Node.js | MongoDB | MySQL</p>
+              <IconsContainer>
+                {/* linkedin */}
+                <IconLinkWrapper
+                  href="https://www.linkedin.com/in/yulongkelly-wu/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin" />
+                </IconLinkWrapper>
+                {/* github */}
+                <IconLinkWrapper
+                  href="https://github.com/yulongkelly"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i class="fab fa-github-square" />
+                </IconLinkWrapper>
+              </IconsContainer>
+            </InformationContainer>
           </Content>
         </Container>
       </div>

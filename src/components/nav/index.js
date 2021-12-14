@@ -15,13 +15,13 @@ const Navbar = () => {
         </LinkR>
         <NavManu>
           <NavItem>
-            <NavLink to='home'>Home</NavLink>
+            <NavLink to='home' activeClass='active' smooth={true} spy={true}>Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='about'>About</NavLink>
+            <NavLink to='about' activeClass='active' smooth={true} spy={true}>About</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='projects'>Projects</NavLink>
+            <NavLink to='projects' activeClass='active' smooth={true} spy={true}>Projects</NavLink>
           </NavItem>
         </NavManu>
       </NavbarContainer>

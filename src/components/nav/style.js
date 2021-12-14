@@ -45,12 +45,13 @@ export const NavLink = styled(LinkS)`
   justify-content: center;
   // padding: 10px 0 0 0;
   font-size: 20px;
+  overflow-x: visible;
 
   &:hover {
     border-bottom: 5px solid #01bf71;
   }
 
-  // &.active {
-  //   border-bottom: 3px solid #01bf71;
-  // }
+  &.active {
+    border-bottom: 5px solid #01bf71;
+  }
 `;

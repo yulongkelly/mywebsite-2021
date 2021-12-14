@@ -15,7 +15,10 @@ const Navbar = () => {
         </LinkR>
         <NavManu>
           <NavItem>
-            <NavLink to='home'>About</NavLink>
+            <NavLink to='home'>Home</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink to='about'>About</NavLink>
           </NavItem>
           <NavItem>
             <NavLink to='projects'>Projects</NavLink>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
+import { Container } from "../style";
 import {
-  Container,
   Video,
   Content,
   IconsContainer,
@@ -11,7 +11,7 @@ import {
   Subtitle,
   Name,
 } from "./style";
-import video from "../assets/video3.mp4";
+import video from "../../assets/video3.mp4";
 
 class Home extends Component {
   constructor() {
@@ -71,7 +71,7 @@ class Home extends Component {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <i class="fab fa-linkedin" />
+                  <i className="fab fa-linkedin" />
                 </IconLinkWrapper>
                 {/* github */}
                 <IconLinkWrapper
@@ -79,7 +79,7 @@ class Home extends Component {
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  <i class="fab fa-github-square" />
+                  <i className="fab fa-github-square" />
                 </IconLinkWrapper>
               </IconsContainer>
             </InformationContainer>

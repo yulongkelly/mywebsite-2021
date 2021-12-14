@@ -1,9 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Navbar from "./components/nav";
 import Home from "./containers/home";
 import Projects from './containers/projects';
+import About from './containers/about'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Navbar />
         <Home />
+        <About/>
         <Projects/>
       </Router>
     </div>

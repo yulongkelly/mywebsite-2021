@@ -9,6 +9,7 @@ export const NavbarContainer = styled.nav`
   position: sticky;
   align-items: center;
   top: 0;
+  z-index: 255;
 `;
 
 export const Img = styled.img`

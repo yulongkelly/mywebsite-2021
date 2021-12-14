@@ -1,8 +1,11 @@
 import React from 'react';
+import { Container } from './style';
 
 const Projects = () => {
     return (
-        <div id="projects">Projects</div>
+        <div id="projects">
+            <Container/>
+        </div>
     )
 }
 

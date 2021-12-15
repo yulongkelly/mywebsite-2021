@@ -21,7 +21,7 @@ class About extends Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll = (e) => {
+  handleScroll = () => {
     if(window.scrollY < this.containerRef.current.offsetTop) {
       this.setState({
         animationState: "paused",

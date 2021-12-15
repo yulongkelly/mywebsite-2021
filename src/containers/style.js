@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   position: relative;
   height: 100vh;
-  background: #000;
+  background-color: #000;
   color: white;
+  top: ${props => props.top};
 `;

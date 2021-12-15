@@ -18,11 +18,28 @@ class Home extends Component {
     super();
     this.state = {
       name: "Kelly",
-      time: "",
+      posnTop: "0",
     };
     this.changeToYulong = this.changeToYulong.bind(this);
     this.changeToKelly = this.changeToKelly.bind(this);
+    this.handleScroll = this.handleScroll.bind(this)
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll = () => {
+    console.log(window.scrollY, window.scrollY * 0.25)
+    this.setState({
+      posnTop: window.scrollY * 0.5 + "px"
+    })
+  }
+
 
   changeToYulong() {
     this.setState({ name: "Yulong" });
@@ -48,7 +65,7 @@ class Home extends Component {
     let numChars = 22 + timeofDay.length + this.state.name.length;
     return (
       <div id="home">
-        <Container>
+        <Container top={this.state.posnTop}>
           <Video autoPlay loop muted src={video} type="video/mp4" />
           <Content>
             <Greeting className="greeting" numChars={numChars}>

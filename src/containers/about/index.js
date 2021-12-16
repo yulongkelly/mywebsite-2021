@@ -8,9 +8,9 @@ class About extends Component {
     super();
     this.state = {
       animationState: "paused",
+      animationClass: "animation",
     };
     this.containerRef = React.createRef();
-    this.handleScroll = this.handleScroll.bind(this)
   }
 
   componentDidMount() {
@@ -43,7 +43,7 @@ class About extends Component {
     const objects = [
       ["I born in Hunan, China", 22],
       ["I came to Canada in 2017", 24],
-      ["I am studying Computer Science @ University of Waterloo", 55],
+      ["I studys Computer Science @ University of Waterloo", 50],
       ["I like reading", 14],
       ["Listen to music", 15],
       ["Playing Ping Pong", 17],
@@ -55,32 +55,11 @@ class About extends Component {
           <TextContainer>
             {objects.map((object, i) => {
               return (
-                <Text numChars={object[1]} key={i} index={i} state={this.state.animationState}>
+                <Text numChars={object[1]} key={i} index={i} state={this.state.animationState} className={this.props.animationClass}>
                   {object[0]}
                 </Text>
               );
             })}
-            {/* <Text numChars={22} index={0} state={this.state.animationState}>
-              I born in Hunan, China
-            </Text>
-            <Text numChars={24} index={1} state={this.state.animationState}>
-              {" "}
-            </Text>
-            <Text numChars={55} index={2} state={this.state.animationState}>
-              I am studying Computer Science @ University of Waterloo
-            </Text>
-            <Text numChars={14} index={3} state={this.state.animationState}>
-              I like reading{" "}
-            </Text>
-            <Text numChars={15} index={4} state={this.state.animationState}>
-              Listen to music{" "}
-            </Text>
-            <Text numChars={17} index={5} state={this.state.animationState}>
-              Playing Ping Pong
-            </Text>
-            <Text numChars={20} index={6} state={this.state.animationState}>
-              And of course Coding!
-            </Text> */}
           </TextContainer>
           <PhotosContainer></PhotosContainer>
         </Container>

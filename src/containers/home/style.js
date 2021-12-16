@@ -77,7 +77,7 @@ export const Subtitle = styled.h5`
 export const Name = styled.div`
   transition: all 500ms ease-in-out;
   display: inline-flex;
-  overflow: hidden;
+  // overflow: hidden;
   align-item: center;
   justify-content: center;
   transition: opacity 2s ease-in-out;
@@ -114,6 +114,7 @@ export const Name = styled.div`
       transition: opacity 2s ease-in-out;
     }
     span:nth-child(2) {
+      // font-size: 35px;
       height: auto;
       opacity: 1;
       width: auto;

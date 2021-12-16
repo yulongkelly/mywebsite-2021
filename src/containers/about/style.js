@@ -10,14 +10,18 @@ export const TextContainer = styled.div`
   margin-top: 100px;
   justify-content: center;
   align-items: center;
+  font-size: 45px;
 `;
 
 export const Text = styled.p`
   opacity: 0;
   position: absolute;
-  animation: ${(props) =>
-    `fadeInup ${typingspeed + "s"} ease ${props.index * typingspeed + "s"}`};
-  animation-play-state: ${(props) => `${props.state}`};
+
+  &.animation {
+    animation: ${(props) =>
+      `fadeInup ${typingspeed + "s"} ease ${props.index * typingspeed + "s"}`};
+    animation-play-state: ${(props) => `${props.state}`};
+  }
   
   @keyframes fadeInup {
     to {

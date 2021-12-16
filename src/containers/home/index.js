@@ -34,7 +34,6 @@ class Home extends Component {
   }
 
   handleScroll = () => {
-    console.log(window.scrollY, window.scrollY * 0.25)
     this.setState({
       posnTop: window.scrollY * 0.5 + "px"
     })
@@ -69,7 +68,7 @@ class Home extends Component {
           <Video autoPlay loop muted src={video} type="video/mp4" />
           <Content>
             <Greeting className="greeting" numChars={numChars}>
-              <span>Good {timeofDay}</span>, I am
+              <span>Good {timeofDay}</span>, My name is
               <Name
               >
                 <span>Kelly</span>

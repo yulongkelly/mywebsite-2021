@@ -5,13 +5,12 @@ import {
   Video,
   Content,
   IconsContainer,
-  IconLinkWrapper,
   Greeting,
   InformationContainer,
   Subtitle,
   Name,
 } from "./style";
-import video from "../../assets/video3.mp4";
+import video from "../../assets/video.mp4";
 
 class Home extends Component {
   constructor() {
@@ -68,7 +67,7 @@ class Home extends Component {
           <Video autoPlay loop muted src={video} type="video/mp4" />
           <Content>
             <Greeting className="greeting" numChars={numChars}>
-              <span>Good {timeofDay}</span>, My name is
+              <span>Good {timeofDay}</span> My name is
               <Name
               >
                 <span>Kelly</span>
@@ -79,24 +78,24 @@ class Home extends Component {
             <InformationContainer>
               <Subtitle>FULLSTACK WEB DEVELOPER</Subtitle>
               <hr />
-              <p> React | Django | Node.js | MongoDB | MySQL</p>
+              <p> React.js | Django | Node.js | MongoDB | MySQL</p>
               <IconsContainer>
                 {/* linkedin */}
-                <IconLinkWrapper
+                <a
                   href="https://www.linkedin.com/in/yulongkelly-wu/"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <i className="fab fa-linkedin" />
-                </IconLinkWrapper>
+                </a>
                 {/* github */}
-                <IconLinkWrapper
+                <a
                   href="https://github.com/yulongkelly"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <i className="fab fa-github-square" />
-                </IconLinkWrapper>
+                </a>
               </IconsContainer>
             </InformationContainer>
           </Content>

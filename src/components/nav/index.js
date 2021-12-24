@@ -1,15 +1,40 @@
 import React, {Component} from "react";
 import { Link as LinkR } from "react-router-dom";
 
-import { NavbarContainer, NavManu, NavItem, NavLink, Img } from "./style";
+import { NavbarContainer, NavManu, NavItem, NavLink, Img, IconsContainer } from "./style";
 
 class Navbar extends Component {
   constructor() {
-    super()
+    super();
+    this.state = {
+      shouldShowIcons: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.toggleIcons);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.toggleIcons);
+  }
+
+  toggleIcons = () => {
+    if(window.scrollY > window.innerHeight && !this.state.shouldShowIcons) {
+      
+      this.setState({
+        shouldShowIcons: true,
+      })
+    } else if(window.scrollY < window.innerHeight && this.state.shouldShowIcons) {
+      this.setState({
+        shouldShowIcons: false,
+      })
+    }
+
   }
 
   render() {
-    const sections = ["home", "about", "projects"];
+    const sections = ["home", "about", "experience", "projects"];
     return (
       <>
         <NavbarContainer>
@@ -36,6 +61,24 @@ class Navbar extends Component {
               );
             })}
           </NavManu>
+          <IconsContainer shouldShowIcons={this.state.shouldShowIcons}>
+                {/* linkedin */}
+                <a
+                  href="https://www.linkedin.com/in/yulongkelly-wu/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i className="fab fa-linkedin" />
+                </a>
+                {/* github */}
+                <a
+                  href="https://github.com/yulongkelly"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i className="fab fa-github-square" />
+                </a>
+              </IconsContainer>
         </NavbarContainer>
       </>
     );

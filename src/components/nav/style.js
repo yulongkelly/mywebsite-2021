@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const NavbarContainer = styled.nav`
@@ -10,6 +9,31 @@ export const NavbarContainer = styled.nav`
   align-items: center;
   top: 0;
   z-index: 255;
+`;
+
+export const IconsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70px;
+  font-size: 30px;
+
+  animation: ${props => props.shouldShowIcons ? "show 1s ease forwards" : "hide 1s ease forwards"};
+  transform: translateY(3rem);
+
+  @keyframes show {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hide {
+    to {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const Img = styled.img`

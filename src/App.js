@@ -5,6 +5,7 @@ import Navbar from "./components/nav";
 import Home from "./containers/home";
 import Projects from "./containers/projects";
 import About from "./containers/about";
+import Experience from "./containers/experience";
 
 class App extends Component {
   constructor() {
@@ -12,6 +13,7 @@ class App extends Component {
     this.state = {
       animationClass: "animation",
     };
+
   }
 
   restartAni = () => {
@@ -24,7 +26,7 @@ class App extends Component {
           this.setState({
             animationClass: "animation",
           });
-        }, 500)
+        }, 500);
       }
     );
   };
@@ -33,9 +35,10 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Navbar onClick={this.restartAni}/>
+          <Navbar onClick={this.restartAni} />
           <Home />
-          <About animationClass={this.state.animationClass}/>
+          <About animationClass={this.state.animationClass} />
+          <Experience/>
           <Projects />
         </Router>
       </div>

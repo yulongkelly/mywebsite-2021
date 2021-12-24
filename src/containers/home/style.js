@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 const typingspeed = 3.5;
 
@@ -51,9 +51,6 @@ export const IconsContainer = styled.div`
   justify-content: space-between;
   width: 50%;
   margin: auto;
-`;
-
-export const IconLinkWrapper = styled.a`
   font-size: 50px;
 `;
 

@@ -1,12 +1,49 @@
 import styled from "styled-components";
 
+// export const Wrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+// `
+
+export const Note = styled.div`
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+
+  p:nth-child(1) {
+    margin-right: 20px;
+    animation: simple1 1s linear infinite;
+  }
+  @keyframes simple {
+    50% {
+      transform: translateX(10px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(10px);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes simple1 {
+    50% {
+      transform: translateX(-10px);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+  }
+`;
+
 export const CardWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   height: 100%;
   width: 100%;
   align-items: center;
-  border: 1px solid white;
 `;
 
 export const CardContent = styled.div`
@@ -19,7 +56,6 @@ export const CardContent = styled.div`
 `;
 
 export const Card = styled.div`
-  border: 1px solid white;
   width: 20%;
   height: 70%;
 
@@ -62,6 +98,10 @@ export const CardFront = styled.div`
     z-index: 1;
     transform: translateZ(200px);
   }
+  h4 {
+    z-index: 1;
+    transform: translateZ(150px);
+  }
   p {
     z-index: 1;
     transform: translateZ(100px);
@@ -82,7 +122,7 @@ export const CardBack = styled.div`
   }
 
   bold {
-    color: #FF878B;
+    color: #ff878b;
   }
   background: #b7c9e5;
 `;

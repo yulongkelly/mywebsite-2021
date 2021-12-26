@@ -21,8 +21,6 @@ import map from "./../../assets/images/map.png";
 import uwaterloo from "./../../assets/images/uwaterloo.png";
 import coding from "./../../assets/images/coding.png";
 
-
-
 class About extends Component {
   constructor() {
     super();
@@ -37,35 +35,35 @@ class About extends Component {
     this.containerRef = React.createRef();
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
+  // componentDidMount() {
+  //   window.addEventListener("scroll", this.handleScroll);
+  // }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("scroll", this.handleScroll);
+  // }
 
-  handleScroll = () => {
-    if (window.scrollY < this.containerRef.current.offsetTop) {
-      this.setState({
-        animationState: "paused",
-      });
-    }
-    if (window.scrollY >= this.containerRef.current.offsetTop) {
-      this.setState({
-        animationState: "running",
-      });
-    }
-    if (
-      window.scrollY >
-      this.containerRef.current.offsetTop +
-        this.containerRef.current.offsetHeight / 2
-    ) {
-      this.setState({
-        animationState: "paused",
-      });
-    }
-  };
+  // handleScroll = () => {
+  //   if (window.scrollY < this.containerRef.current.offsetTop) {
+  //     this.setState({
+  //       animationState: "paused",
+  //     });
+  //   }
+  //   if (window.scrollY >= this.containerRef.current.offsetTop) {
+  //     this.setState({
+  //       animationState: "running",
+  //     });
+  //   }
+  //   if (
+  //     window.scrollY >
+  //     this.containerRef.current.offsetTop +
+  //       this.containerRef.current.offsetHeight / 2
+  //   ) {
+  //     this.setState({
+  //       animationState: "paused",
+  //     });
+  //   }
+  // };
 
   handleAnimationEnd = (i) => {
     // hard coded; 6 frames -- objects.length
@@ -84,18 +82,18 @@ class About extends Component {
         shouldShowSecondMarker: false,
         shouldShowSchool: false,
       });
-    } else if(i === 1) {
+    } else if (i === 1) {
       this.setState({
         shouldShowSecondMarker: true,
       });
-    } else if(i === 2) {
+    } else if (i === 2) {
       this.setState({
         shouldShowSchool: true,
-      })
+      });
     } else if (i === 3) {
       this.setState({
-        shouldShowMap:false,
-      })
+        shouldShowMap: false,
+      });
     }
   };
 
@@ -114,24 +112,41 @@ class About extends Component {
     return (
       <div id="about">
         <Container ref={this.containerRef} className="about">
-          <Note>Click About in the navbar to restart the animation</Note>
-          <MapWrapper show={this.state.shouldShowMap} showSecondMarker={this.state.shouldShowSecondMarker}>
+          <Note>Click About in the navbar to start/restart the animation</Note>
+          <MapWrapper
+            show={this.state.shouldShowMap}
+            showSecondMarker={this.state.shouldShowSecondMarker}
+            // state={this.state.animationState}
+          >
             {objects1.map((object, i) => {
               return (
                 <MapText
                   index={i}
                   className={this.props.animationClass}
+                  // state={this.state.animationState}
                   onAnimationStart={() => this.handleAnimationStart(i)}
                 >
                   {object[0]}
                 </MapText>
               );
             })}
-            <hr className={this.props.animationClass} />
-            <Map img={map}   showSecondMarker={this.state.shouldShowSecondMarker} showSchool={this.state.shouldShowSchool}>
-              <img className={this.props.animationClass} src="https://ukauto.fr/wp-content/uploads/2017/11/map-marker-icon.png" />
-              <img className={this.props.animationClass} src="https://ukauto.fr/wp-content/uploads/2017/11/map-marker-icon.png" />
-              <img className={this.props.animationClass} src={uwaterloo}/>
+            <hr className={this.props.animationClass}/>
+            <Map
+              img={map}
+              showSecondMarker={this.state.shouldShowSecondMarker}
+              showSchool={this.state.shouldShowSchool}
+            >
+              <img
+                className={this.props.animationClass}
+                alt={"marker"}
+                src="https://ukauto.fr/wp-content/uploads/2017/11/map-marker-icon.png"
+              />
+              <img
+                className={this.props.animationClass}
+                alt="marker"
+                src="https://ukauto.fr/wp-content/uploads/2017/11/map-marker-icon.png"
+              />
+              <img alt="uwaterloo" className={this.props.animationClass} src={uwaterloo} />
             </Map>
           </MapWrapper>
           {objects.map((object, i) => {

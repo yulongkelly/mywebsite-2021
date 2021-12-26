@@ -17,7 +17,7 @@ export const ContentContainer = styled.div`
   &.animation {
     animation: ${(props) =>
       `fadeInup ${typingspeed + "s"} ease ${(props.index * typingspeed)+6 + "s"}`};
-    animation-play-state: ${(props) => `${props.state}`};
+    // animation-play-state: ${(props) => `${props.state}`};
   }
   @keyframes fadeInup {
     to {
@@ -109,16 +109,18 @@ export const Map = styled.div`
   height: 500px;
   background-image: url(${(props) => props.img});
   background-size: cover;
-  // animation-play-state: ${(props) => `${props.state}`};
+  animation-play-state: ${(props) => `${props.state}`};
 
   img {
-    &.animation {
+    &.animation { 
       animation: bounce-rotate 500ms ease ${(props) => props.i} infinite;
+      // animation-play-state: ${(props) => `${props.state}`};
       @keyframes bounce-rotate {
         50% {
           transform: translateY(-10px);
         }
       }
+      
     }
   }
 
@@ -202,7 +204,7 @@ export const MapText = styled.h2`
   &.animation {
     animation: ${(props) =>
       `fadeInup ${(typingspeed+2) + "s"} ease ${props.index * (typingspeed+2) + "s"}`};
-    animation-play-state: ${(props) => `${props.state}`};
+    // animation-play-state: ${(props) => `${props.state}`};
   }
   @keyframes fadeInup {
     to {

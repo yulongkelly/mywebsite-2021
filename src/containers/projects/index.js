@@ -62,7 +62,7 @@ class Projects extends Component {
   handleOnKeyDown = (e) => {
     if (e.keyCode === 39 && this.state.index3 !== 2) {
       this.handleForward();
-    } else if (e.keyCode == 37 && this.state.index1 !== 2) {
+    } else if (e.keyCode === 37 && this.state.index1 !== 2) {
       this.handleBackward();
     }
   };

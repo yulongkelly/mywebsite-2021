@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const typingspeed = 3.5;
 
+// 6 here is because I add 2s for each map animation frame (totally 3)
 export const ContentContainer = styled.div`
   text-align: center;
   font-size: 45px;
@@ -15,7 +16,7 @@ export const ContentContainer = styled.div`
 
   &.animation {
     animation: ${(props) =>
-      `fadeInup ${typingspeed + "s"} ease ${props.index * typingspeed + "s"}`};
+      `fadeInup ${typingspeed + "s"} ease ${(props.index * typingspeed)+6 + "s"}`};
     animation-play-state: ${(props) => `${props.state}`};
   }
   @keyframes fadeInup {
@@ -128,7 +129,8 @@ export const Map = styled.div`
     bottom: 250px;
     right: 170px;
     transform: translateY(0);
-    animation-play-state: ${(props) => (props.showSchool ? "paused" : "running")};
+    animation-play-state: ${(props) =>
+      props.showSchool ? "paused" : "running"};
   }
 
   img:nth-child(2) {
@@ -138,7 +140,8 @@ export const Map = styled.div`
     bottom: 300px;
     left: 185px;
     opacity: ${(props) => (props.showSecondMarker ? 1 : 0)};
-    animation-play-state: ${(props) => (props.showSchool ? "paused" : "running")};
+    animation-play-state: ${(props) =>
+      props.showSchool ? "paused" : "running"};
   }
 
   img:nth-child(3) {
@@ -150,28 +153,6 @@ export const Map = styled.div`
     opacity: ${(props) => (props.showSchool ? 1 : 0)};
     animation-play-state: paused;
   }
-
-  &::after {
-    content: "";
-    height: 3px;
-    position: absolute;
-    top: 250px;
-    width: 415px;
-    left: 200px;
-    border-top: 5px dotted #f00;
-    transform: scaleX(0) rotate(7deg);
-    transform-origin: right;
-
-    animation: travel 500ms ease forwards;
-    animation-play-state: ${(props) =>
-      props.showSecondMarker ? "running" : "paused"};
-
-    @keyframes travel {
-      to {
-        transform: scaleX(1) rotate(7deg);
-      }
-    }
-  }
 `;
 
 export const MapWrapper = styled.div`
@@ -181,6 +162,33 @@ export const MapWrapper = styled.div`
   justify-content: center;
   align-items: center;
   opacity: ${(props) => (props.show ? 1 : 0)};
+
+  hr {
+    height: 3px;
+    position: absolute;
+    top: 250px;
+    width: 415px;
+    left: 200px;
+    border-top: 5px dotted #f00;
+    transform: scaleX(0) rotate(7deg);
+    transform-origin: right;
+    z-index: 10;
+    border-bottom: none;
+    border-right: none;
+    border-left: none;
+
+    &.animation {
+      animation: travel 500ms ease forwards;
+      animation-play-state: ${(props) =>
+        props.showSecondMarker ? "running" : "paused"};
+
+      @keyframes travel {
+        to {
+          transform: scaleX(1) rotate(7deg);
+        }
+      }
+    }
+  }
 `;
 
 export const MapText = styled.h2`
@@ -193,7 +201,7 @@ export const MapText = styled.h2`
 
   &.animation {
     animation: ${(props) =>
-      `fadeInup ${typingspeed + "s"} ease ${props.index * typingspeed + "s"}`};
+      `fadeInup ${(typingspeed+2) + "s"} ease ${props.index * (typingspeed+2) + "s"}`};
     animation-play-state: ${(props) => `${props.state}`};
   }
   @keyframes fadeInup {

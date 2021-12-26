@@ -115,7 +115,7 @@ class About extends Component {
       <div id="about">
         <Container ref={this.containerRef} className="about">
           <Note>Click About in the navbar to restart the animation</Note>
-          <MapWrapper show={this.state.shouldShowMap}>
+          <MapWrapper show={this.state.shouldShowMap} showSecondMarker={this.state.shouldShowSecondMarker}>
             {objects1.map((object, i) => {
               return (
                 <MapText
@@ -127,7 +127,8 @@ class About extends Component {
                 </MapText>
               );
             })}
-            <Map img={map}  showSecondMarker={this.state.shouldShowSecondMarker} showSchool={this.state.shouldShowSchool}>
+            <hr className={this.props.animationClass} />
+            <Map img={map}   showSecondMarker={this.state.shouldShowSecondMarker} showSchool={this.state.shouldShowSchool}>
               <img className={this.props.animationClass} src="https://ukauto.fr/wp-content/uploads/2017/11/map-marker-icon.png" />
               <img className={this.props.animationClass} src="https://ukauto.fr/wp-content/uploads/2017/11/map-marker-icon.png" />
               <img className={this.props.animationClass} src={uwaterloo}/>

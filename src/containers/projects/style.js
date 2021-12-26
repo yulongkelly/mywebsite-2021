@@ -86,6 +86,11 @@ export const Note = styled.div`
 
 export const Describtion = styled.div`
   margin-bottom: 35px;
+
+  span {
+      color: #F9F871;
+  }
+
   h4 {
     text-align: center;
     position: relative;

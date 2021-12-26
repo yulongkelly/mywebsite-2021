@@ -5,16 +5,9 @@ import styled from "styled-components";
 //   flex-direction: column;
 // `
 
-export const Note = styled.div`
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-
-  p:nth-child(1) {
-    margin-right: 20px;
-    animation: simple1 1s linear infinite;
-  }
+export const RightArrows = styled.p`
+margin-left: 20px;
+  animation: simple 2s linear infinite;
   @keyframes simple {
     50% {
       transform: translateX(10px);
@@ -25,7 +18,19 @@ export const Note = styled.div`
       opacity: 0;
     }
   }
-  
+`;
+
+export const Note = styled.div`
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+
+  & p:nth-child(1) {
+    margin-right: 20px;
+    animation: simple1 2s linear infinite;
+  }
+
   @keyframes simple1 {
     50% {
       transform: translateX(-10px);
@@ -70,7 +75,6 @@ export const CardFront = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  // transform: rotateY(0.25turn);
   backface-visibility: hidden;
   transform-style: preserve-3d;
   height: 100%;
@@ -101,6 +105,7 @@ export const CardFront = styled.div`
   h4 {
     z-index: 1;
     transform: translateZ(150px);
+    margin: 0;
   }
   p {
     z-index: 1;

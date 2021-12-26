@@ -6,8 +6,8 @@ import {
   CardContent,
   CardFront,
   CardBack,
-  Wrapper,
   Note,
+  RightArrows,
 } from "./style";
 import { Container } from "../style";
 import opentext from "../../assets/images/opentext.png";
@@ -86,7 +86,7 @@ const Experience = () => {
                 <h1>Arista Networks</h1>
                 <h4>Diagnostic/Infrastructure Engineering</h4>
                 <h4>Intern</h4>
-                <p>Jan, 2022 - Aril 2022</p>
+                <p>Jan, 2022 - Aril 2022 (expected)</p>
               </CardFront>
               <CardBack></CardBack>
             </CardContent>
@@ -95,7 +95,7 @@ const Experience = () => {
         <Note>
           <p>{backward}</p>
           <h4>Hover the card</h4>
-          <p className="forward">{forward}</p>
+          <RightArrows>{forward}</RightArrows>
         </Note>
         {/* </Wrapper> */}
       </Container>

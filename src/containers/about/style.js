@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 const typingspeed = 3.5;
 
-export const Wrapper = styled.div``;
-
 export const ContentContainer = styled.div`
   text-align: center;
   font-size: 45px;
@@ -102,4 +100,106 @@ export const Arrow = styled.div`
   border: 2vh solid;
   border-color: white transparent transparent white;
   transform: rotate(-135deg);
+`;
+
+export const Map = styled.div`
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background-image: url(${(props) => props.img});
+  background-size: cover;
+  // animation-play-state: ${(props) => `${props.state}`};
+
+  img {
+    &.animation {
+      animation: bounce-rotate 500ms ease ${(props) => props.i} infinite;
+      @keyframes bounce-rotate {
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    }
+  }
+
+  img:nth-child(1) {
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    bottom: 250px;
+    right: 170px;
+    transform: translateY(0);
+    animation-play-state: ${(props) => (props.showSchool ? "paused" : "running")};
+  }
+
+  img:nth-child(2) {
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    bottom: 300px;
+    left: 185px;
+    opacity: ${(props) => (props.showSecondMarker ? 1 : 0)};
+    animation-play-state: ${(props) => (props.showSchool ? "paused" : "running")};
+  }
+
+  img:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 250px;
+    left: 150px;
+    opacity: ${(props) => (props.showSchool ? 1 : 0)};
+    animation-play-state: paused;
+  }
+
+  &::after {
+    content: "";
+    height: 3px;
+    position: absolute;
+    top: 250px;
+    width: 415px;
+    left: 200px;
+    border-top: 5px dotted #f00;
+    transform: scaleX(0) rotate(7deg);
+    transform-origin: right;
+
+    animation: travel 500ms ease forwards;
+    animation-play-state: ${(props) =>
+      props.showSecondMarker ? "running" : "paused"};
+
+    @keyframes travel {
+      to {
+        transform: scaleX(1) rotate(7deg);
+      }
+    }
+  }
+`;
+
+export const MapWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: ${(props) => (props.show ? 1 : 0)};
+`;
+
+export const MapText = styled.h2`
+  position: absolute;
+  top: -70px;
+  width: 100%;
+  opacity: 0;
+  font-size: 30px;
+  text-align: center;
+
+  &.animation {
+    animation: ${(props) =>
+      `fadeInup ${typingspeed + "s"} ease ${props.index * typingspeed + "s"}`};
+    animation-play-state: ${(props) => `${props.state}`};
+  }
+  @keyframes fadeInup {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;

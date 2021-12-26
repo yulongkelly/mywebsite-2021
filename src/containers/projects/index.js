@@ -73,11 +73,13 @@ class Projects extends Component {
         <h4>Academic Anonymous</h4>
         <ul>
           <li>
-            Built a live QA session using React.js during Hack the Valley,
-            allowing students to continuously ask questions during in-class
-            lectures.
+            Built a live QA session using <span>React.js</span> during Hack the
+            Valley, allowing students to continuously ask questions during
+            in-class lectures.
           </li>
-          <li>Implemented real-time chat feature using Socket.io.</li>
+          <li>
+            Implemented real-time chat feature using <span>Socket.io</span>.
+          </li>
         </ul>
       </Describtion>
     );
@@ -86,11 +88,15 @@ class Projects extends Component {
         <h4>Yelp Camp</h4>
         <ul>
           <li>
-            Built a Yelp-style website for viewing/uploading campsites using
-            Bootstrap, JavaScript, Express.
+            Built a Yelp-style website for viewing/uploading campsites using{" "}
+            <span>Bootstrap, JavaScript, Express</span>.
           </li>
-          <li>Stored user and campground data in MongoDB Atlas.</li>
-          <li>Developed REST APIs using Node.js.</li>
+          <li>
+            Stored user and campground data in <span>MongoDB Atlas</span>.
+          </li>
+          <li>
+            Developed REST APIs using <span>Node.js</span>.
+          </li>
         </ul>
       </Describtion>
     );
@@ -99,8 +105,9 @@ class Projects extends Component {
         <h4>Auto Scheduler</h4>
         <ul>
           <li>
-            Built a website that auto generates schedules using React.js,
-            Django, and PostgreSQL, helping students maintain work-life balance.
+            Built a website that auto generates schedules using{" "}
+            <span>React.js, Django</span>, and <sapn>PostgreSQL</sapn>, helping
+            students maintain work-life balance.
           </li>
           <li>
             Implemented an algorithm to check if tasks can be finished on time.
@@ -109,9 +116,24 @@ class Projects extends Component {
       </Describtion>
     );
     let properties = [
-      [this.state.index1, academic, proj1, "https://github.com/yulongkelly/Academic-Anonymous"],
-      [this.state.index2, yelpcamp, proj2, "https://ylk-yelp-camp.herokuapp.com/"],
-      [this.state.index3, autoscheduler, proj3, "https://github.com/yulongkelly/automatic_scheduler"],
+      [
+        this.state.index1,
+        academic,
+        proj1,
+        "https://github.com/yulongkelly/Academic-Anonymous",
+      ],
+      [
+        this.state.index2,
+        yelpcamp,
+        proj2,
+        "https://ylk-yelp-camp.herokuapp.com/",
+      ],
+      [
+        this.state.index3,
+        autoscheduler,
+        proj3,
+        "https://github.com/yulongkelly/automatic_scheduler",
+      ],
     ];
     return (
       <div id="projects">

@@ -9,4 +9,8 @@ export const Container = styled.div`
   background-color: #000;
   color: white;
   top: ${props => props.top};
+
+  h1, h2 {
+    z-index: 10;
+  }
 `;

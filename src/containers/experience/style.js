@@ -57,7 +57,6 @@ export const CardContent = styled.div`
   transform-style: preserve-3d;
   height: 100%;
   width: 100%;
-  color: chocolate;
 `;
 
 export const Card = styled.div`
@@ -79,6 +78,7 @@ export const CardFront = styled.div`
   transform-style: preserve-3d;
   height: 100%;
   width: 100%;
+  color: #00008b;
 
   background-image: url(${(props) => props.img});
   background-size: cover;
@@ -96,6 +96,7 @@ export const CardFront = styled.div`
     right: 1em;
     border: 3px solid currentColor;
     transform: translateZ(50px);
+    color: chocolate;
   }
 
   h1 {
@@ -124,10 +125,13 @@ export const CardBack = styled.div`
   align-items: center;
   ul {
     transform: translateZ(100px);
+    color: #00008b;
+    filter: saturate(0.7);
   }
 
   bold {
-    color: #ff878b;
+    color: #2ab1be;
+    filter: saturate(1.5);
   }
   background: #b7c9e5;
 `;

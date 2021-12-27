@@ -31,6 +31,7 @@ class About extends Component {
       shouldShowMap: true,
       shouldShowSecondMarker: false,
       shouldShowSchool: false,
+      showBigNote: "bignote",
     };
     this.containerRef = React.createRef();
   }
@@ -81,6 +82,7 @@ class About extends Component {
         shouldShowMap: true,
         shouldShowSecondMarker: false,
         shouldShowSchool: false,
+        showBigNote: null,
       });
     } else if (i === 1) {
       this.setState({
@@ -112,7 +114,7 @@ class About extends Component {
     return (
       <div id="about">
         <Container ref={this.containerRef} className="about">
-          <Note>Click About in the navbar to start/restart the animation</Note>
+          <Note className={this.state.showBigNote}>Click About in the navbar to start/restart the animation</Note>
           <MapWrapper
             show={this.state.shouldShowMap}
             showSecondMarker={this.state.shouldShowSecondMarker}

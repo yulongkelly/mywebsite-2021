@@ -39,6 +39,12 @@ export const Note = styled.div`
   top: 100px;
   right: 5px;
 
+  &.bignote {
+    font-size: 30px;
+    opacity: 1;
+    right: 30%;
+  }
+
   // animation: blink-text 3s ease-in infinite;
 
   // @keyframes blink-text {

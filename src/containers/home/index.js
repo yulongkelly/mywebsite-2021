@@ -10,7 +10,6 @@ import {
   Subtitle,
   Name,
 } from "./style";
-import video from "../../assets/video.mp4";
 
 class Home extends Component {
   constructor() {
@@ -64,7 +63,7 @@ class Home extends Component {
     return (
       <div id="home">
         <Container top={this.state.posnTop}>
-          <Video autoPlay loop muted src={video} type="video/mp4" />
+          <Video autoPlay loop muted src={"https://yulongkellyweb.s3.amazonaws.com/video.mp4"} type="video/mp4" />
           <Content>
             <Greeting className="greeting" numChars={numChars}>
               <span>Good {timeofDay}</span> My name is

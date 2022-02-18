@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.js": "/mywebsite-2021/static/js/main.d7e9e2c7.chunk.js",
+    "main.js.map": "/mywebsite-2021/static/js/main.d7e9e2c7.chunk.js.map",
+    "runtime-main.js": "/mywebsite-2021/static/js/runtime-main.d7ac7170.js",
+    "runtime-main.js.map": "/mywebsite-2021/static/js/runtime-main.d7ac7170.js.map",
+    "static/js/2.8c594e32.chunk.js": "/mywebsite-2021/static/js/2.8c594e32.chunk.js",
+    "static/js/2.8c594e32.chunk.js.map": "/mywebsite-2021/static/js/2.8c594e32.chunk.js.map",
+    "index.html": "/mywebsite-2021/index.html",
+    "static/js/2.8c594e32.chunk.js.LICENSE.txt": "/mywebsite-2021/static/js/2.8c594e32.chunk.js.LICENSE.txt",
+    "static/media/academic.d3982179.png": "/mywebsite-2021/static/media/academic.d3982179.png",
+    "static/media/autoscheduler.26dcd05d.png": "/mywebsite-2021/static/media/autoscheduler.26dcd05d.png",
+    "static/media/coding.c3d466a4.png": "/mywebsite-2021/static/media/coding.c3d466a4.png",
+    "static/media/listening.aee96e43.png": "/mywebsite-2021/static/media/listening.aee96e43.png",
+    "static/media/map.262a9a4e.png": "/mywebsite-2021/static/media/map.262a9a4e.png",
+    "static/media/opentext.b7bceb7e.png": "/mywebsite-2021/static/media/opentext.b7bceb7e.png",
+    "static/media/pingpong.bae4d862.png": "/mywebsite-2021/static/media/pingpong.bae4d862.png",
+    "static/media/reading.47d3299a.png": "/mywebsite-2021/static/media/reading.47d3299a.png",
+    "static/media/uwaterloo.4c8baa43.png": "/mywebsite-2021/static/media/uwaterloo.4c8baa43.png",
+    "static/media/yelpcamp.c2301233.png": "/mywebsite-2021/static/media/yelpcamp.c2301233.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d7ac7170.js",
+    "static/js/2.8c594e32.chunk.js",
+    "static/js/main.d7e9e2c7.chunk.js"
+  ]
+}

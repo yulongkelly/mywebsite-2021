@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  font-family: "Readex Pro", sans-serif;
+  background-color: black;
+}
+
+::selection {
+  background: cadetblue;
+}

@@ -88,7 +88,26 @@ const Experience = () => {
                 <h4>Intern</h4>
                 <p>Jan, 2022 - Aril 2022 (expected)</p>
               </CardFront>
-              <CardBack></CardBack>
+              <CardBack>
+                <ul>
+                  <li>
+                    Designed and implemented a script for creating and managing
+                    a new database using <bold>Go</bold>.
+                  </li>
+                  <li>
+                    Created an environment to run tests locally using{" "}
+                    <bold>Docker</bold> and <bold>Python</bold>.
+                  </li>
+                  <li>
+                    Implemented git pre-commit script to check Pylint errors in
+                    Python 2.5.
+                  </li>
+                  <li>
+                    Redesigned a python script that generates test reports
+                    running every 10 minutes.
+                  </li>
+                </ul>
+              </CardBack>
             </CardContent>
           </Card>
         </CardWrapper>
